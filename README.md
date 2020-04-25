@@ -49,3 +49,5 @@ TripAdvisor
 
 You can download this app on PlayStore
 https://play.google.com/store/apps/details?id=com.skgezhil.allinone&hl=en
+
+![screenshot](https://github.com/SKGEzhil/All_in_All_Alaguraja/app/src/main/res/drawable/sc1.png)
