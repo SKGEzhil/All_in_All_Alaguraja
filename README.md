@@ -49,3 +49,5 @@ TripAdvisor
 
 You can download this app on PlayStore
 https://play.google.com/store/apps/details?id=com.skgezhil.allinone&hl=en
+
+![Screenshot](sc1.png)
