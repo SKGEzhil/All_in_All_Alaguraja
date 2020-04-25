@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">All in All Alaguraja</string>
+    <string name="facebool">https://www.facebook.com</string>
+    <string name="youtube">Subscribe my youtube channel</string>
+    <string name="instagram">Follow me on instagram</string>
+    <string name="playstore">Rate me on Google Play</string>
+    <string name="blog">Also visit my blog</string>
+    <string name="exchangeprompt_message">Select currencies to exchange:</string>
+    <string name="cdnamount_message">$CDN to exchange:</string>
+    <string name="convertedamount_message">Total Local Currency</string>
+    <string name="button_exchange">EXCHANGE</string>
+    <string name="button_clear">Clear Amounts</string>
+    <string name="saved_api_call_key">"com.lucas.CurrencyConverter.LASTAPICALL"</string>
+    <string name="currency_prompt">Choose a currency...</string>
+    <string name="aud_conversion">FXAUDCAD</string>
+    <string name="brl_conversion">FXBRLCAD</string>
+    <string name="cny_conversion">FXCNYCAD</string>
+    <string name="eur_conversion">FXEURCAD</string>
+    <string name="hkd_conversion">FXHKDCAD</string>
+    <string name="inr_conversion">FXINRCAD</string>
+    <string name="idr_conversion">FXIDRCAD</string>
+    <string name="jpy_conversion">FXJPYCAD</string>
+    <string name="myr_conversion">FXMYRCAD</string>
+    <string name="mxn_conversion">FXMXNCAD</string>
+    <string name="nzd_conversion">FXNZDCAD</string>
+    <string name="nok_conversion">FXNOKCAD</string>
+    <string name="pen_conversion">FXPENCAD</string>
+    <string name="rub_conversion">FXRUBCAD</string>
+    <string name="sar_conversion">FXSARCAD</string>
+    <string name="sgd_conversion">FXSGDCAD</string>
+    <string name="zar_conversion">FXZARCAD</string>
+    <string name="krw_conversion">FXKRWCAD</string>
+    <string name="sek_conversion">FXSEKCAD</string>
+    <string name="chf_conversion">FXCHFCAD</string>
+    <string name="twd_conversion">FXTWDCAD</string>
+    <string name="thb_conversion">FXTHBCAD</string>
+    <string name="try_conversion">FXTRYCAD</string>
+    <string name="gbp_conversion">FXGBPCAD</string>
+    <string name="usd_conversion">FXUSDCAD</string>
+    <string name="vnd_conversion">FXVNDCAD</string>
+    <string-array name="currency_array">
+        <item>Australian dollar</item>
+        <item>Brazilian real</item>
+        <item>Canadian dollar</item>
+        <item>Chinese renminbi</item>
+        <item>European euro</item>
+        <item>Hong Kong dollar</item>
+        <item>Indian rupee</item>
+        <item>Indonesian rupiah</item>
+        <item>Japanese yen</item>
+        <item>Malaysian ringgit</item>
+        <item>Mexican peso</item>
+        <item>New Zealand dollar</item>
+        <item>Norwegian kron</item>
+        <item>Peruvian new sol</item>
+        <item>Russian ruble</item>
+        <item>Saudi riyal</item>
+        <item>Singapore dollar</item>
+        <item>South African rand</item>
+        <item>South Korean won</item>
+        <item>Swedish krona</item>
+        <item>Swiss franc</item>
+        <item>Taiwanese dollar</item>
+        <item>Thai baht</item>
+        <item>Turkish lira</item>
+        <item>UK pound sterling</item>
+        <item>US dollar</item>
+        <item>Vietnamese dong</item>
+    </string-array>
+</resources>

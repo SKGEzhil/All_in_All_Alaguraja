@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:orientation="horizontal"
+    android:layout_height="match_parent"
+                android:background="@drawable/background"
+    tools:context=".MainActivity">
+    <LinearLayout android:layout_width="match_parent"
+                  android:orientation="vertical"
+                  android:padding="10dp"
+                  android:layout_height="match_parent">
+<LinearLayout android:layout_width="match_parent"
+              android:orientation="vertical"
+              android:layout_height="wrap_content">
+    <LinearLayout android:layout_width="match_parent"
+                  android:orientation="horizontal"
+                  android:layout_height="wrap_content">
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_weight="1"
+                      android:paddingRight="5dp"
+                      android:layout_height="wrap_content">
+            <ImageButton android:layout_width="fill_parent"
+                         android:src="@drawable/tools"
+                         android:scaleType="fitCenter"
+                         android:id="@+id/sensors"
+                         android:layout_weight="1"
+                         android:background="@drawable/button"
+                         android:layout_height="150dp"
+            />
+        </LinearLayout>
+        <LinearLayout android:layout_width="wrap_content"
+                      android:layout_weight="1"
+                      android:paddingLeft="5dp"
+                      android:layout_height="wrap_content">
+    <ImageButton android:layout_width="fill_parent"
+    android:id="@+id/socialmedia"
+                 android:layout_weight="1"
+                 android:src="@drawable/socialmedia"
+                 android:scaleType="fitCenter"
+            android:layout_toRightOf="@+id/sensors"
+                 android:background="@drawable/button"
+    android:layout_height="150dp"
+    />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:paddingTop="10dp"
+                      android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="wrap_content"
+                              android:layout_weight="1"
+                              android:paddingRight="5dp"
+                              android:layout_height="wrap_content">
+                    <ImageButton android:layout_width="fill_parent"
+                                 android:id="@+id/shopping"
+                                 android:src="@drawable/shopping"
+                                 android:scaleType="fitCenter"
+                                 android:layout_weight="1"
+                                 android:background="@drawable/button"
+                                 android:layout_height="150dp"
+                    />
+                </LinearLayout>
+                <LinearLayout android:layout_width="wrap_content"
+                              android:layout_weight="1"
+                              android:paddingLeft="5dp"
+                              android:layout_height="wrap_content">
+                    <ImageButton android:layout_width="fill_parent"
+                                 android:id="@+id/tickets"
+                                 android:src="@drawable/tickets"
+                                 android:scaleType="fitCenter"
+                                 android:layout_weight="1"
+                                 android:layout_toRightOf="@+id/sensors"
+                                 android:background="@drawable/button"
+                                 android:layout_height="150dp"
+                    />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="horizontal"
+                      android:paddingTop="10dp"
+                      android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_weight="1"
+                          android:paddingRight="5dp"
+                          android:layout_height="wrap_content">
+                <ImageButton android:layout_width="fill_parent"
+                             android:id="@+id/food"
+                             android:src="@drawable/food"
+                             android:scaleType="fitCenter"
+                             android:layout_weight="1"
+                             android:background="@drawable/button"
+                             android:layout_height="150dp"
+                />
+            </LinearLayout>
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_weight="1"
+                          android:paddingLeft="5dp"
+                          android:layout_height="wrap_content">
+                <ImageButton android:layout_width="fill_parent"
+                             android:id="@+id/education"
+                             android:layout_weight="1"
+                             android:layout_toRightOf="@+id/sensors"
+                             android:src="@drawable/think"
+                             android:scaleType="fitCenter"
+                             android:background="@drawable/button"
+                             android:layout_height="150dp"
+                />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="horizontal"
+                      android:paddingTop="10dp"
+                      android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_weight="1"
+                          android:paddingRight="5dp"
+                          android:layout_height="wrap_content">
+                <ImageButton android:layout_width="fill_parent"
+                             android:id="@+id/tour"
+                             android:scaleType="fitCenter"
+                             android:layout_weight="1"
+                             android:src="@drawable/tour"
+                             android:background="@drawable/button"
+                             android:layout_height="150dp"
+                />
+            </LinearLayout>
+            <LinearLayout android:layout_width="wrap_content"
+                          android:layout_weight="1"
+                          android:paddingLeft="5dp"
+                          android:layout_height="wrap_content">
+                <ImageButton android:layout_width="fill_parent"
+                             android:id="@+id/info"
+                             android:src="@drawable/info"
+                             android:scaleType="fitCenter"
+                             android:layout_weight="1"
+                             android:layout_toRightOf="@+id/sensors"
+                             android:background="@drawable/button"
+                             android:layout_height="150dp"
+                />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             tools:context=".CurrencyConverrter">
+
+    <Spinner
+            android:id="@+id/currency_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:entries="@array/currency_array"
+            android:prompt="@string/currency_prompt"
+            app:layout_constraintBottom_toTopOf="@+id/currency_spinner2"
+            app:layout_constraintEnd_toStartOf="@+id/cdn_dollars"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" tools:ignore="RtlCompat"/>
+
+    <Spinner
+            android:id="@+id/currency_spinner2"
+            android:layout_width="wrap_content"
+            android:layout_height="31dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="101dp"
+            android:entries="@array/currency_array"
+            android:prompt="@string/currency_prompt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/local_currency_amount"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/currency_spinner" />
+
+
+    <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/exchangeprompt_message"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+            android:id="@+id/cdn_dollars"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintBottom_toTopOf="@+id/local_currency_amount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/currency_spinner"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+            android:id="@+id/local_currency_amount"
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="96dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/currency_spinner2"
+            app:layout_constraintTop_toBottomOf="@+id/cdn_dollars" />
+
+    <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent" android:gravity="center">
+
+        <Button
+                android:id="@+id/button3"
+                android:layout_width="122dp"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorAccent"
+                android:onClick="convertCurrency"
+                android:text="@string/button_exchange"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toTopOf="@+id/local_currency_amount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button2"
+                app:layout_constraintTop_toBottomOf="@+id/cdn_dollars"
+                app:layout_constraintVertical_bias="0.5726" />
+
+        <Button
+                android:id="@+id/button2"
+                android:layout_width="122dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:background="?attr/colorPrimary"
+                android:onClick="clearCurrencyFields"
+                android:text="@string/button_clear"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toTopOf="@+id/currency_spinner2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/currency_spinner"
+                app:layout_constraintVertical_bias="0.572" />
+
+    </TableRow>
+
+
+
+</android.support.constraint.ConstraintLayout>

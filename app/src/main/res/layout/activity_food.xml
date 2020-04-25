@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:background="@drawable/background"
+        android:layout_height="match_parent"
+        tools:context=".Food">
+
+    <LinearLayout android:layout_width="match_parent"
+                  android:orientation="vertical"
+                  android:padding="10dp"
+                  android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="fill_parent"
+                              android:paddingRight="5dp"
+                              android:layout_weight="1"
+                              android:layout_height="wrap_content">
+                    <ImageButton android:layout_width="fill_parent"
+                                 android:background="@drawable/button"
+                                 android:id="@+id/swiggy"
+                                 android:src="@drawable/swiggy"
+                                 android:scaleType="fitCenter"
+                                 android:layout_height="150dp"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="fill_parent"
+                              android:layout_weight="1"
+                              android:paddingLeft="5dp"
+                              android:layout_height="wrap_content">
+                    <ImageButton android:layout_width="fill_parent"
+                                 android:background="@drawable/button"
+                                 android:id="@+id/zomoto"
+                                 android:src="@drawable/zomoto"
+                                 android:scaleType="fitCenter"
+                                 android:layout_height="150dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+                      android:paddingTop="10dp"
+                      android:orientation="vertical"
+                      android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="fill_parent"
+                              android:paddingRight="5dp"
+                              android:layout_weight="1"
+                              android:layout_height="wrap_content">
+                    <ImageButton android:layout_width="fill_parent"
+                                 android:background="@drawable/button"
+                                 android:id="@+id/ubereats"
+                                 android:src="@drawable/ubereats"
+                                 android:scaleType="fitCenter"
+                                 android:layout_height="150dp"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="fill_parent"
+                              android:layout_weight="1"
+                              android:paddingLeft="5dp"
+                              android:layout_height="wrap_content">
+                    <ImageButton android:layout_width="fill_parent"
+                                 android:id="@+id/dominos"
+                                 android:src="@drawable/dominos"
+                                 android:scaleType="fitCenter"
+                                 android:background="@drawable/button"
+                                 android:layout_height="150dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+                      android:paddingTop="10dp"
+                      android:orientation="vertical"
+                      android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="fill_parent"
+                              android:paddingRight="5dp"
+                              android:layout_weight="1"
+                              android:layout_height="wrap_content">
+                    <ImageButton android:layout_width="fill_parent"
+                                 android:background="@drawable/button"
+                                 android:id="@+id/pizzahut"
+                                 android:src="@drawable/pizzahut"
+                                 android:scaleType="fitCenter"
+                                 android:layout_height="150dp"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="fill_parent"
+                              android:layout_weight="1"
+                              android:paddingLeft="5dp"
+                              android:layout_height="wrap_content">
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+                      android:paddingTop="10dp"
+                      android:orientation="vertical"
+                      android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="fill_parent"
+                              android:paddingRight="5dp"
+                              android:layout_weight="1"
+                              android:layout_height="wrap_content">
+
+                </LinearLayout>
+                <LinearLayout android:layout_width="fill_parent"
+                              android:layout_weight="1"
+                              android:paddingLeft="5dp"
+                              android:layout_height="wrap_content">
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+                      android:paddingTop="10dp"
+                      android:orientation="vertical"
+                      android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="fill_parent"
+                              android:paddingRight="5dp"
+                              android:layout_weight="1"
+                              android:layout_height="wrap_content">
+
+                </LinearLayout>
+                <LinearLayout android:layout_width="fill_parent"
+                              android:layout_weight="1"
+                              android:paddingLeft="5dp"
+                              android:layout_height="wrap_content">
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent"
+                      android:paddingTop="10dp"
+                      android:orientation="vertical"
+                      android:layout_height="wrap_content">
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="fill_parent"
+                              android:paddingRight="5dp"
+                              android:layout_weight="1"
+                              android:layout_height="wrap_content">
+
+                </LinearLayout>
+                <LinearLayout android:layout_width="fill_parent"
+                              android:layout_weight="1"
+                              android:paddingLeft="5dp"
+                              android:layout_height="wrap_content">
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
