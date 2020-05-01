@@ -2,20 +2,20 @@ package com.skgezhil.allinone;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
 import android.util.AttributeSet;
-import android.widget.ImageView;
 
 public class flexibile_height extends android.support.v7.widget.AppCompatImageView {
 
-    public flexibile_height(Context context) {
+    public flexibile_height(@NonNull Context context) {
         super(context);
     }
 
-    public flexibile_height(Context context, AttributeSet attrs) {
+    public flexibile_height(@NonNull Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public flexibile_height(Context context, AttributeSet attrs, int defStyle) {
+    public flexibile_height(@NonNull Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
