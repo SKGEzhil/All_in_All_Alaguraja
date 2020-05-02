@@ -1,5 +1,7 @@
 package com.skgezhil.allinone
 
+import android.content.DialogInterface
+import android.content.Intent
 import android.hardware.Sensor
 import android.hardware.Sensor.TYPE_ACCELEROMETER
 import android.hardware.Sensor.TYPE_MAGNETIC_FIELD
@@ -8,6 +10,7 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.hardware.SensorManager.SENSOR_DELAY_GAME
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.WindowManager
 import android.view.animation.Animation.RELATIVE_TO_SELF
@@ -35,25 +38,94 @@ class Compass : AppCompatActivity(), SensorEventListener {
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
         val actionbar = supportActionBar
         actionbar?.setBackgroundDrawable(resources.getDrawable(R.drawable.actionbar))
         image = findViewById(R.id.compass) as ImageView
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         accelerometer = sensorManager.getDefaultSensor(TYPE_ACCELEROMETER)
-        magnetometer = sensorManager.getDefaultSensor(TYPE_MAGNETIC_FIELD)
+        try {
+            magnetometer = sensorManager.getDefaultSensor(TYPE_MAGNETIC_FIELD)
+        }
+        catch (e: IllegalStateException){
+            // build alert dialog
+            val dialogBuilder = AlertDialog.Builder(this)
+            var myIntent = Intent(baseContext, sensorActivity::class.java)
+            // set message of alert dialog
+            dialogBuilder.setMessage("This function is incompatible with your device")
+                // if the dialog is cancelable
+                .setCancelable(false)
+                // positive button text and action
+                .setPositiveButton("ok", DialogInterface.OnClickListener {
+                        dialog, id -> finish()
+                })
+
+            // create dialog box
+            val alert = dialogBuilder.create()
+            alert.setIcon(R.drawable.icofull)
+            // set title for alert dialog box
+            alert.setTitle("Cannot open compass")
+            // show alert dialog
+            alert.show()
+        }
     }
 
     override fun onResume() {
         super.onResume()
 
         sensorManager.registerListener(this, accelerometer, SENSOR_DELAY_GAME)
-        sensorManager.registerListener(this, magnetometer, SENSOR_DELAY_GAME)
+        try {
+            sensorManager.registerListener(this, magnetometer, SENSOR_DELAY_GAME)
+        }
+        catch (e: UninitializedPropertyAccessException){
+            val dialogBuilder = AlertDialog.Builder(this)
+            var myIntent = Intent(baseContext, sensorActivity::class.java)
+            // set message of alert dialog
+            dialogBuilder.setMessage("This function is incompatible with your device")
+                // if the dialog is cancelable
+                .setCancelable(false)
+                // positive button text and action
+                .setPositiveButton("ok", DialogInterface.OnClickListener {
+                        dialog, id -> finish()
+                })
+
+            // create dialog box
+            val alert = dialogBuilder.create()
+            alert.setIcon(R.drawable.icofull)
+            // set title for alert dialog box
+            alert.setTitle("Cannot open compass")
+            // show alert dialog
+            alert.show()
+        }
+
     }
 
     override fun onPause() {
         super.onPause()
         sensorManager.unregisterListener(this, accelerometer)
-        sensorManager.unregisterListener(this, magnetometer)
+        try {
+            sensorManager.unregisterListener(this, magnetometer)
+        }
+        catch (e: UninitializedPropertyAccessException){
+            val dialogBuilder = AlertDialog.Builder(this)
+            var myIntent = Intent(baseContext, sensorActivity::class.java)
+            // set message of alert dialog
+            dialogBuilder.setMessage("This function is incompatible with your device")
+                // if the dialog is cancelable
+                .setCancelable(false)
+                // positive button text and action
+                .setPositiveButton("ok", DialogInterface.OnClickListener {
+                        dialog, id -> finish()
+                })
+
+            // create dialog box
+            val alert = dialogBuilder.create()
+            alert.setIcon(R.drawable.icofull)
+            // set title for alert dialog box
+            alert.setTitle("Cannot open compass")
+            // show alert dialog
+            alert.show()
+        }
     }
 
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) {}
