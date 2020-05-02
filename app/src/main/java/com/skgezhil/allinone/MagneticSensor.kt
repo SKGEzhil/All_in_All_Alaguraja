@@ -29,7 +29,7 @@ class MagneticSensor : AppCompatActivity() {
 
         override fun onSensorChanged(event: SensorEvent) {
             tvText.text = event.values[0].toString()
-            if (event.values[0] > 100)
+            if (event.values[0] > 100 || event.values[0] < -100)
                 detection.setText("METAL DETECTED")
             else
                 detection.setText("METAL NOT DETECTED")
