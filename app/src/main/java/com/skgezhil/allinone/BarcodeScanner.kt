@@ -3,19 +3,12 @@ package com.skgezhil.allinone
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Intent
-import android.content.pm.PackageManager
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat
-import android.support.v4.content.ContextCompat
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import com.sembozdemir.permissionskt.askPermissions
-import com.sembozdemir.permissionskt.isPermissionGranted
-import com.skgezhil.allinone.BarcodeScanner.Companion as ComSkgezhilAllinoneBarcodeScanner
-import android.Manifest
+import androidx.appcompat.app.AppCompatActivity
 
 @Suppress("DEPRECATION")
 class BarcodeScanner : AppCompatActivity() {

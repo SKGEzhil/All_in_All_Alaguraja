@@ -1,13 +1,10 @@
 package com.skgezhil.allinone
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Window
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_education.*
-import kotlinx.android.synthetic.main.activity_shopping.*
-import kotlinx.android.synthetic.main.activity_tickets.*
 
 @Suppress("DEPRECATION")
 class Education : AppCompatActivity() {

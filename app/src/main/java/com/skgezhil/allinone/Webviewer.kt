@@ -1,44 +1,24 @@
 package com.skgezhil.allinone
 
+
 import android.app.DownloadManager
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Build
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
-import android.support.annotation.RequiresApi
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.webkit.*
-import android.widget.ProgressBar
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_social_media.*
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_webviewer.*
-import android.support.v4.app.ActivityCompat.startActivityForResult
-import android.os.Parcelable
-import android.provider.MediaStore
-import java.io.File.separator
-import java.nio.file.Files.exists
-import android.webkit.ValueCallback
-import android.support.v4.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import java.io.File
-import android.support.v4.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
-import android.support.v4.app.ActivityCompat.startActivityForResult
-import android.support.v4.app.SupportActivity
-import android.support.v4.app.SupportActivity.ExtraData
-import android.support.v4.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 
 
-
-
-
-
+@Suppress("DEPRECATION")
 class Webviewer : AppCompatActivity() {
     var url: String? = null
     private var imageUri: Uri? = null
@@ -51,6 +31,11 @@ class Webviewer : AppCompatActivity() {
         setContentView(R.layout.activity_webviewer)
         webview.webViewClient = mywebviewclient()
         webview.settings.javaScriptEnabled = true
+        webview.settings.allowContentAccess = true
+        webview.settings.javaScriptCanOpenWindowsAutomatically = true
+        webview.settings.allowUniversalAccessFromFileURLs = true
+        webview.settings.loadsImagesAutomatically = true
+        webview.settings.savePassword = true
         webview.settings.allowFileAccess = true
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
             webview.settings.allowFileAccessFromFileURLs = true

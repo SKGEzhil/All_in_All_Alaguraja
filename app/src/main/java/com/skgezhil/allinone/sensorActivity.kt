@@ -2,8 +2,8 @@ package com.skgezhil.allinone
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_sensor.*
 
 @Suppress("DEPRECATION")

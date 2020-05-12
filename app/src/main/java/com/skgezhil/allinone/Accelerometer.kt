@@ -1,14 +1,13 @@
 package com.skgezhil.allinone
 
-import android.support.v7.app.AppCompatActivity
-import android.os.Bundle
+
 import android.content.Context
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
-import android.widget.TextView
-import butterknife.BindView
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_accelerometer.*
 
 class Accelerometer : AppCompatActivity(), SensorEventListener {

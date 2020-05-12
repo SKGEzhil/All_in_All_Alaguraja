@@ -6,18 +6,14 @@ import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import com.codility.pedometer.listener.StepListener
 import com.codility.pedometer.utils.StepDetector
+import kotlinx.android.synthetic.main.activity_pedometer.*
 import java.math.RoundingMode
 import java.text.DecimalFormat
-import com.skgezhil.allinone.R
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_pedometer.*
-import kotlin.math.roundToInt
-import kotlin.math.roundToLong
 
 /**
  * Created by Govind on 05/25/2018.
