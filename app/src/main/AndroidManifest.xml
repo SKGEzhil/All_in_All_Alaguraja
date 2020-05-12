@@ -28,8 +28,6 @@
         </activity>
         <activity android:name=".ScanActivity">
         </activity>
-        <activity android:name=".CurrencyConverrter">
-        </activity>
         <activity android:name=".BarcodeScanner">
         </activity>
         <activity android:name=".Pedometer">
