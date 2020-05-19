@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         MobileAds.initialize(this) {}
         val adRequest = AdRequest.Builder()
+
             .build()
         adView.loadAd(adRequest)
         window.setFlags(
@@ -67,6 +68,10 @@ class MainActivity : AppCompatActivity() {
         }
         info?.setOnClickListener {
             var myIntent = Intent(baseContext, Info::class.java)
+            startActivity(myIntent)
+        }
+        medical?.setOnClickListener {
+            var myIntent = Intent(baseContext, Medical::class.java)
             startActivity(myIntent)
         }
     }

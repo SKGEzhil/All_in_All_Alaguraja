@@ -6,14 +6,15 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
-import kotlinx.android.synthetic.main.activity_tour.*
+import kotlinx.android.synthetic.main.activity_medical.*
+import kotlinx.android.synthetic.main.activity_tour.adView
 
 @Suppress("DEPRECATION")
-class Tour : AppCompatActivity() {
+class Medical : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tour)
+        setContentView(R.layout.activity_medical)
         MobileAds.initialize(this) {}
         val adRequest = AdRequest.Builder()
             .build()
@@ -23,22 +24,22 @@ class Tour : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
         val actionbar = supportActionBar
         actionbar?.setBackgroundDrawable(resources.getDrawable(R.drawable.actionbar))
-        val goibbol = "https://www.goibbo.com"
-        val makemytripl = "https://www.makemytrip.com/"
-        val tripadvisorl = "https://www.tripadvisor.in"
-        goibbo?.setOnClickListener(){
-            val imprintIntent = Intent(this@Tour, Webviewer::class.java)
-            imprintIntent.putExtra("webivewImprint",goibbol)
+        val practol = "https://www.practo.com/consult"
+        val doconlinel = "https://www.doconline.com/"
+        val icliniql = "https://www.icliniq.com/en_IN/"
+        practo?.setOnClickListener(){
+            val imprintIntent = Intent(this@Medical, Webviewer::class.java)
+            imprintIntent.putExtra("webivewImprint",practol)
             this.startActivity(imprintIntent)
         }
-        makemytrip?.setOnClickListener(){
-            val imprintIntent = Intent(this@Tour, Webviewer::class.java)
-            imprintIntent.putExtra("webivewImprint",makemytripl)
+        doconline?.setOnClickListener(){
+            val imprintIntent = Intent(this@Medical, Webviewer::class.java)
+            imprintIntent.putExtra("webivewImprint",doconlinel)
             this.startActivity(imprintIntent)
         }
-        tripadvisor?.setOnClickListener(){
-            val imprintIntent = Intent(this@Tour, Webviewer::class.java)
-            imprintIntent.putExtra("webivewImprint",tripadvisorl)
+        icliniq?.setOnClickListener(){
+            val imprintIntent = Intent(this@Medical, Webviewer::class.java)
+            imprintIntent.putExtra("webivewImprint",icliniql)
             this.startActivity(imprintIntent)
         }
     }

@@ -15,8 +15,8 @@ android {
         applicationId "com.skgezhil.allinone"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 6
-        versionName "1.0"
+        versionCode 7
+        versionName "1.0.2"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -37,17 +37,17 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     //Otras dependencias
-    implementation 'com.tappx.sdk.android:tappx-sdk:3.+'
-    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.tappx.sdk.android:tappx-sdk:3.1.7'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.google.android.material:material:1.1.0-alpha04'
+    implementation 'com.google.android.material:material:1.2.0-alpha06'
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.google.android.gms:play-services-ads:19.1.0'
     implementation 'com.github.sembozdemir:PermissionsKt:1.0.0'
-    implementation 'com.google.android.gms:play-services-base:6.5.87'
-    implementation 'com.google.android.gms:play-services-vision:17.0.2'
+    implementation 'com.google.android.gms:play-services-base:17.2.1'
+    implementation 'com.google.android.gms:play-services-vision:20.0.0'
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4'
     implementation 'com.jakewharton:butterknife:10.0.0'

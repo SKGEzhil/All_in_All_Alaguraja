@@ -16,6 +16,9 @@ import android.view.animation.RotateAnimation
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
+import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Math.toDegrees
 
 
@@ -35,6 +38,11 @@ class Compass : AppCompatActivity(), SensorEventListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_compass)
+        MobileAds.initialize(this) {}
+        val adRequest = AdRequest.Builder()
+
+            .build()
+        adView.loadAd(adRequest)
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)

@@ -18,8 +18,6 @@ class Tickets : AppCompatActivity() {
         setContentView(R.layout.activity_tickets)
         MobileAds.initialize(this) {}
         val adRequest = AdRequest.Builder()
-            .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-            .addTestDevice("SomeString")
             .build()
         adView.loadAd(adRequest)
         adView.adListener = object: AdListener() {

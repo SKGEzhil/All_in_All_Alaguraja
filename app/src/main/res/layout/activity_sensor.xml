@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:background="@drawable/background"
         android:layout_height="match_parent"
         tools:context=".Food">
-
+<ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
     <LinearLayout android:layout_width="match_parent"
                   android:orientation="vertical"
                   android:padding="10dp"
@@ -55,23 +55,16 @@
                               android:layout_weight="1"
                               android:layout_height="wrap_content">
                     <ImageButton android:layout_width="fill_parent"
-                                 android:background="@drawable/button"
-                                 android:id="@+id/magnet"
-                                 android:src="@drawable/magnet"
-                                 android:scaleType="fitCenter"
-                                 android:layout_height="150dp"/>
+                            android:id="@+id/compassbtn"
+                            android:layout_height="150dp"
+                            android:background="@drawable/button"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/compass"/>
                 </LinearLayout>
                 <LinearLayout android:layout_width="fill_parent"
                               android:layout_weight="1"
                               android:paddingLeft="5dp"
-                              android:layout_height="wrap_content">
-                    <ImageButton android:layout_width="fill_parent"
-                                 android:id="@+id/accelerometer"
-                                 android:src="@drawable/accelerometer"
-                                 android:scaleType="fitCenter"
-                                 android:background="@drawable/button"
-                                 android:layout_height="150dp"/>
-                </LinearLayout>
+                              android:layout_height="wrap_content"/>
 
             </LinearLayout>
         </LinearLayout>
@@ -86,24 +79,12 @@
                               android:paddingRight="5dp"
                               android:layout_weight="1"
                               android:layout_height="wrap_content">
-                    <ImageButton android:layout_width="fill_parent"
-                                 android:background="@drawable/button"
-                                 android:id="@+id/light"
-                                 android:src="@drawable/light"
-                                 android:scaleType="fitCenter"
-                                 android:layout_height="150dp"/>
+
                 </LinearLayout>
                 <LinearLayout android:layout_width="fill_parent"
                               android:layout_weight="1"
                               android:paddingLeft="5dp"
-                              android:layout_height="wrap_content">
-                    <ImageButton android:layout_width="fill_parent"
-                                 android:background="@drawable/button"
-                                 android:id="@+id/compassbtn"
-                                 android:src="@drawable/compass"
-                                 android:scaleType="fitCenter"
-                                 android:layout_height="150dp"/>
-                </LinearLayout>
+                              android:layout_height="wrap_content"/>
 
             </LinearLayout>
         </LinearLayout>
@@ -118,6 +99,7 @@
                               android:paddingRight="5dp"
                               android:layout_weight="1"
                               android:layout_height="wrap_content">
+
                 </LinearLayout>
                 <LinearLayout android:layout_width="fill_parent"
                               android:layout_weight="1"
@@ -173,3 +155,14 @@
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
+    <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-7716695643466392/1518730809">
+    </com.google.android.gms.ads.AdView>
+</RelativeLayout>

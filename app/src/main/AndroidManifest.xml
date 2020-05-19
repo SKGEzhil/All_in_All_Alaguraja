@@ -1,70 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.skgezhil.allinone">
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.skgezhil.allinone">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/icon1"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/icon1_round"
-
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Medical"></activity>
         <activity android:name=".SplashActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Info">
-        </activity>
-        <activity android:name=".ScanActivity">
-        </activity>
-        <activity android:name=".BarcodeScanner">
-        </activity>
-        <activity android:name=".Pedometer">
-        </activity>
-        <activity android:name=".Tour">
-        </activity>
-        <activity android:name=".Education">
-        </activity>
-        <activity android:name=".Food">
-        </activity>
-        <activity android:name=".Tickets">
-        </activity>
-        <activity android:name=".Shopping">
-        </activity>
-        <activity android:name=".Webviewer">
-        </activity>
-        <activity android:name=".SocialMedia">
-        </activity>
-        <activity android:name=".Compass">
-        </activity>
-        <activity android:name=".Accelerometer">
-        </activity>
-        <activity android:name=".MagneticSensor">
-        </activity>
-        <activity android:name=".LightSensor">
-        </activity>
-        <activity android:name=".sensorActivity">
-        </activity>
+        <activity android:name=".Info"></activity>
+        <activity android:name=".ScanActivity"></activity>
+        <activity android:name=".BarcodeScanner"></activity>
+        <activity android:name=".Pedometer"></activity>
+        <activity android:name=".Tour"></activity>
+        <activity android:name=".Education"></activity>
+        <activity android:name=".Food"></activity>
+        <activity android:name=".Tickets"></activity>
+        <activity android:name=".Shopping"></activity>
+        <activity android:name=".Webviewer"></activity>
+        <activity android:name=".SocialMedia"></activity>
+        <activity android:name=".Compass"></activity>
+        <activity android:name=".Accelerometer"></activity>
+        <activity android:name=".MagneticSensor"></activity>
+        <activity android:name=".LightSensor"></activity>
+        <activity android:name=".sensorActivity"></activity>
         <activity
                 android:name=".MainActivity"
-                android:noHistory="true">
+                android:noHistory="true"></activity>
 
-        </activity>
         <meta-data
                 android:name="com.google.android.gms.ads.APPLICATION_ID"
-                android:value="ca-app-pub-7716695643466392~5649547509"/>
-
+                android:value="ca-app-pub-7716695643466392~5649547509" />
     </application>
 
 </manifest>

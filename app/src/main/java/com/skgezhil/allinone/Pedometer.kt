@@ -11,6 +11,8 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.codility.pedometer.listener.StepListener
 import com.codility.pedometer.utils.StepDetector
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_pedometer.*
 import java.math.RoundingMode
 import java.text.DecimalFormat
@@ -57,6 +59,11 @@ class Pedometer : AppCompatActivity(), SensorEventListener, StepListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pedometer)
+        MobileAds.initialize(this) {}
+        val adRequest = AdRequest.Builder()
+
+            .build()
+        adView.loadAd(adRequest)
         window.setFlags(
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
