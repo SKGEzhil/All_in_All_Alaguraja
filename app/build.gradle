@@ -15,7 +15,7 @@ android {
         applicationId "com.skgezhil.allinone"
         minSdkVersion 16
         targetSdkVersion 28
-        versionCode 7
+        versionCode 8
         versionName "1.0.2"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"

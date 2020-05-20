@@ -2,7 +2,6 @@ package com.skgezhil.allinone
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.WindowManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +22,8 @@ class sensorActivity : AppCompatActivity(), RewardedVideoAdListener {
     private val  MY_PERMISSIONS_REQUEST_CAMERA = 123
     private lateinit var mInterstitialAd: InterstitialAd
     private lateinit var mRewardedVideoAd: RewardedVideoAd
+    var rewardv : Int ?= null
+    var interstitialv : Int ?= null
 
     // functions
 
@@ -59,11 +60,13 @@ class sensorActivity : AppCompatActivity(), RewardedVideoAdListener {
         MobileAds.initialize(this, "ca-app-pub-7716695643466392/6622576185")
         mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this)
         mRewardedVideoAd.rewardedVideoAdListener = this
+        loadRewardedVideoAd()
 
         //interstitial ads
 
         mInterstitialAd = InterstitialAd(this)
         mInterstitialAd.adUnitId = "ca-app-pub-7716695643466392/5373428915"
+        loadinterstitialads()
 
         // full screen and actionbar
 
@@ -76,10 +79,15 @@ class sensorActivity : AppCompatActivity(), RewardedVideoAdListener {
         //button click listeners
 
         compassbtn?.setOnClickListener {
-            Toast.makeText(applicationContext,"Loading....",Toast.LENGTH_LONG).show()
-            loadRewardedVideoAd()
+            Toast.makeText(applicationContext,"Watch ad to continue...",Toast.LENGTH_LONG).show()
+            rewardv = 1
             if (mRewardedVideoAd.isLoaded) {
                 mRewardedVideoAd.show()
+            }
+            else{
+                Toast.makeText(applicationContext,"Ad not loaded",Toast.LENGTH_LONG).show()
+                var myIntent = Intent(baseContext, Compass ::class.java)
+                startActivity(myIntent)
             }
         }
         pedometer?.setOnClickListener {
@@ -87,12 +95,14 @@ class sensorActivity : AppCompatActivity(), RewardedVideoAdListener {
             startActivity(myIntent)
         }
         barcodescanner?.setOnClickListener {
-            Toast.makeText(applicationContext,"Loading....",Toast.LENGTH_LONG).show()
-            loadinterstitialads()
+            Toast.makeText(applicationContext,"Watch ad to continue...",Toast.LENGTH_LONG).show()
+            interstitialv = 1
             if (mInterstitialAd.isLoaded) {
                 mInterstitialAd.show()
             } else {
-                Log.d("TAG", "The interstitial wasn't loaded yet.")
+                Toast.makeText(applicationContext,"Ad not loaded",Toast.LENGTH_LONG).show()
+                var myIntent = Intent(baseContext, BarcodeScanner::class.java)
+                startActivity(myIntent)
             }
         }
 
@@ -133,8 +143,12 @@ class sensorActivity : AppCompatActivity(), RewardedVideoAdListener {
 
             override fun onAdFailedToLoad(errorCode: Int) {
                 // Code to be executed when an ad request fails.
-                var myIntent = Intent(baseContext, BarcodeScanner::class.java)
-                startActivity(myIntent)
+                loadinterstitialads()
+                if (interstitialv == 1) {
+                    var myIntent = Intent(baseContext, BarcodeScanner::class.java)
+                    startActivity(myIntent)
+                    interstitialv = 0
+                }
             }
 
             override fun onAdOpened() {
@@ -152,8 +166,11 @@ class sensorActivity : AppCompatActivity(), RewardedVideoAdListener {
             override fun onAdClosed() {
                 // Code to be executed when the interstitial ad is closed.
                 loadinterstitialads()
-                var myIntent = Intent(baseContext, BarcodeScanner::class.java)
-                startActivity(myIntent)
+                if (interstitialv == 1) {
+                    var myIntent = Intent(baseContext, BarcodeScanner::class.java)
+                    startActivity(myIntent)
+                    interstitialv = 0
+                }
             }
         }
     }
@@ -175,17 +192,25 @@ class sensorActivity : AppCompatActivity(), RewardedVideoAdListener {
     }
 
     override fun onRewardedVideoAdClosed() {
-        var myIntent = Intent(baseContext, Compass::class.java)
-        startActivity(myIntent)
+        loadRewardedVideoAd()
+        if (rewardv == 1) {
+            var myIntent = Intent(baseContext, Compass::class.java)
+            startActivity(myIntent)
+            rewardv = 0
+        }
     }
 
     override fun onRewardedVideoAdFailedToLoad(errorCode: Int) {
-        var myIntent = Intent(baseContext, Compass ::class.java)
-        startActivity(myIntent)
+        loadRewardedVideoAd()
+        if (rewardv == 1) {
+            var myIntent = Intent(baseContext, Compass::class.java)
+            startActivity(myIntent)
+            rewardv = 0
+        }
     }
 
     override fun onRewardedVideoAdLoaded() {
-        mRewardedVideoAd.show()
+
     }
 
     override fun onRewardedVideoAdOpened() {
@@ -195,8 +220,12 @@ class sensorActivity : AppCompatActivity(), RewardedVideoAdListener {
     }
 
     override fun onRewardedVideoCompleted() {
-        var myIntent = Intent(baseContext, Compass::class.java)
-        startActivity(myIntent)
+        loadRewardedVideoAd()
+        if (rewardv== 1) {
+            var myIntent = Intent(baseContext, Compass::class.java)
+            startActivity(myIntent)
+            rewardv = 0
+        }
     }
 
 
