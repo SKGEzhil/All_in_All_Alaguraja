@@ -1,6 +1,7 @@
 package com.skgezhil.allinone
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
@@ -68,7 +69,19 @@ class Pedometer : AppCompatActivity(), SensorEventListener, StepListener {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
         val actionbar = supportActionBar
-        actionbar?.setBackgroundDrawable(resources.getDrawable(R.drawable.actionbar))
+        val Themesetting : SharedPreferences = getSharedPreferences("Themesetting", 0)
+        val Themeeditor: SharedPreferences.Editor = Themesetting.edit()
+        val isNightModeOn: Boolean = Themesetting?.getBoolean("NightMode", false)
+        if (isNightModeOn){
+            actionbar?.setBackgroundDrawable(resources.getDrawable(com.skgezhil.allinone.R.color.black))
+            btnstart.setBackgroundResource(R.drawable.btbg_dark)
+            btnstop.setBackgroundResource(R.drawable.btbg_dark)
+            distance.setBackgroundResource(R.drawable.btbg_dark)
+            calories.setBackgroundResource(R.drawable.btbg_dark)
+        }
+        else {
+            actionbar?.setBackgroundDrawable(resources.getDrawable(com.skgezhil.allinone.R.drawable.actionbar))
+        }
         // Get an instance of the SensorManager
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         simpleStepDetector = StepDetector()

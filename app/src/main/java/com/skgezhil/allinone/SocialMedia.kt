@@ -2,12 +2,15 @@ package com.skgezhil.allinone
 
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_social_media.*
+import kotlinx.android.synthetic.main.activity_social_media.adView
 
 
 @Suppress("DEPRECATION")
@@ -22,7 +25,24 @@ class SocialMedia : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
         val actionbar = supportActionBar
-        actionbar?.setBackgroundDrawable(resources.getDrawable(R.drawable.actionbar))
+        val Themesetting : SharedPreferences = getSharedPreferences("Themesetting", 0)
+        val Themeeditor: SharedPreferences.Editor = Themesetting.edit()
+        val isNightModeOn: Boolean = Themesetting?.getBoolean("NightMode", false)
+        if (isNightModeOn){
+            actionbar?.setBackgroundDrawable(resources.getDrawable(com.skgezhil.allinone.R.color.black))
+            facebook.setBackgroundResource(R.drawable.btbg_dark)
+            instagam.setBackgroundResource(R.drawable.btbg_dark)
+            snapchat.setBackgroundResource(R.drawable.btbg_dark)
+            linkedin.setBackgroundResource(R.drawable.btbg_dark)
+            pinterest.setBackgroundResource(R.drawable.btbg_dark)
+            twitter.setBackgroundResource(R.drawable.btbg_dark)
+            reddit.setBackgroundResource(R.drawable.btbg_dark)
+            youtube.setBackgroundResource(R.drawable.btbg_dark)
+            zoom.setBackgroundResource(R.drawable.btbg_dark)
+        }
+        else {
+            actionbar?.setBackgroundDrawable(resources.getDrawable(com.skgezhil.allinone.R.drawable.actionbar))
+        }
         val facebookl = "http://www.facebook.com"
         val instagraml = "http://www.instagram.com"
         val snapchatl = "http://accounts.snapchat.com"

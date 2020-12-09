@@ -1,6 +1,7 @@
 package com.skgezhil.allinone
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Toast
@@ -74,7 +75,18 @@ class sensorActivity : AppCompatActivity(), RewardedVideoAdListener {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
         val actionbar = supportActionBar
-        actionbar?.setBackgroundDrawable(resources.getDrawable(R.drawable.actionbar))
+        val Themesetting : SharedPreferences = getSharedPreferences("Themesetting", 0)
+        val Themeeditor: SharedPreferences.Editor = Themesetting.edit()
+        val isNightModeOn: Boolean = Themesetting?.getBoolean("NightMode", false)
+        if (isNightModeOn){
+            actionbar?.setBackgroundDrawable(resources.getDrawable(com.skgezhil.allinone.R.color.black))
+            compassbtn.setBackgroundResource(R.drawable.btbg_dark)
+            pedometer.setBackgroundResource(R.drawable.btbg_dark)
+            barcodescanner.setBackgroundResource(R.drawable.btbg_dark)
+        }
+        else {
+            actionbar?.setBackgroundDrawable(resources.getDrawable(com.skgezhil.allinone.R.drawable.actionbar))
+        }
 
         //button click listeners
 

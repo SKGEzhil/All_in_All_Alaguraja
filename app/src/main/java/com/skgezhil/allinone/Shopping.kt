@@ -1,12 +1,15 @@
 package com.skgezhil.allinone
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_shopping.*
+import kotlinx.android.synthetic.main.activity_shopping.adView
+import kotlinx.android.synthetic.main.activity_social_media.*
 
 @Suppress("DEPRECATION")
 class Shopping : AppCompatActivity() {
@@ -22,7 +25,21 @@ class Shopping : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
         val actionbar = supportActionBar
-        actionbar?.setBackgroundDrawable(resources.getDrawable(R.drawable.actionbar))
+        val Themesetting : SharedPreferences = getSharedPreferences("Themesetting", 0)
+        val Themeeditor: SharedPreferences.Editor = Themesetting.edit()
+        val isNightModeOn: Boolean = Themesetting?.getBoolean("NightMode", false)
+        if (isNightModeOn){
+            actionbar?.setBackgroundDrawable(resources.getDrawable(com.skgezhil.allinone.R.color.black))
+            amazon.setBackgroundResource(R.drawable.btbg_dark)
+            flipkart.setBackgroundResource(R.drawable.btbg_dark)
+            snapcdeal.setBackgroundResource(R.drawable.btbg_dark)
+            justdial.setBackgroundResource(R.drawable.btbg_dark)
+            aliexpress.setBackgroundResource(R.drawable.btbg_dark)
+            banggood.setBackgroundResource(R.drawable.btbg_dark)
+        }
+        else {
+            actionbar?.setBackgroundDrawable(resources.getDrawable(com.skgezhil.allinone.R.drawable.actionbar))
+        }
         val amazonl = "https://www.amazon.in/"
         val flipkartl = "https://www.flipkart.com/"
         val snapdeall = "https://www.snapdeal.com/"

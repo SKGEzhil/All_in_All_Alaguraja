@@ -2,6 +2,7 @@ package com.skgezhil.allinone
 
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.SharedPreferences
 import android.hardware.Sensor
 import android.hardware.Sensor.TYPE_ACCELEROMETER
 import android.hardware.Sensor.TYPE_MAGNETIC_FIELD
@@ -48,7 +49,15 @@ class Compass : AppCompatActivity(), SensorEventListener {
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         val actionbar = supportActionBar
-        actionbar?.setBackgroundDrawable(resources.getDrawable(R.drawable.actionbar))
+        val Themesetting : SharedPreferences = getSharedPreferences("Themesetting", 0)
+        val Themeeditor: SharedPreferences.Editor = Themesetting.edit()
+        val isNightModeOn: Boolean = Themesetting?.getBoolean("NightMode", false)
+        if (isNightModeOn){
+            actionbar?.setBackgroundDrawable(resources.getDrawable(com.skgezhil.allinone.R.color.black))
+        }
+        else {
+            actionbar?.setBackgroundDrawable(resources.getDrawable(com.skgezhil.allinone.R.drawable.actionbar))
+        }
         image = findViewById(R.id.compass) as ImageView
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         accelerometer = sensorManager.getDefaultSensor(TYPE_ACCELEROMETER)

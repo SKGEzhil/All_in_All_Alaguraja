@@ -1,6 +1,7 @@
 package com.skgezhil.allinone
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Toast
@@ -8,7 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
+import kotlinx.android.synthetic.main.activity_social_media.*
 import kotlinx.android.synthetic.main.activity_tickets.*
+import kotlinx.android.synthetic.main.activity_tickets.adView
 
 @Suppress("DEPRECATION")
 class Tickets : AppCompatActivity() {
@@ -53,7 +56,19 @@ class Tickets : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN)
         val actionbar = supportActionBar
-        actionbar?.setBackgroundDrawable(resources.getDrawable(R.drawable.actionbar))
+        val Themesetting : SharedPreferences = getSharedPreferences("Themesetting", 0)
+        val Themeeditor: SharedPreferences.Editor = Themesetting.edit()
+        val isNightModeOn: Boolean = Themesetting?.getBoolean("NightMode", false)
+        if (isNightModeOn){
+            actionbar?.setBackgroundDrawable(resources.getDrawable(com.skgezhil.allinone.R.color.black))
+            rail.setBackgroundResource(R.drawable.btbg_dark)
+            flight.setBackgroundResource(R.drawable.btbg_dark)
+            movie.setBackgroundResource(R.drawable.btbg_dark)
+            redbus.setBackgroundResource(R.drawable.btbg_dark)
+        }
+        else {
+            actionbar?.setBackgroundDrawable(resources.getDrawable(com.skgezhil.allinone.R.drawable.actionbar))
+        }
         val raill = "https://www.railyatri.in/train-ticket"
         val flightl = "https://www.google.com/flights?hl=en#flt=/m/019fbp..2020-05-03*./m/019fbp.2020-05-07;c:INR;e:1;ls:1w;sd:0;t:h"
         val moviel = "https://in.bookmyshow.com/"

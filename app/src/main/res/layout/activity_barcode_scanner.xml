@@ -24,6 +24,7 @@
             android:gravity="center"
             android:autoSizeTextType="uniform"
             android:maxLines="1"
+            android:textColor="@color/colour7"
             android:text="Scan" />
     <TextView
             android:layout_width="match_parent"
@@ -31,7 +32,7 @@
             android:gravity="center"
             android:id="@+id/tvresult"
             android:textSize="20dp"
-            android:textColor="#000"
+            android:textColor="@color/colour7"
             android:layout_marginTop="10dp"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Result will be here"/>
@@ -46,6 +47,7 @@
                       android:layout_height="wrap_content">
             <Button android:layout_width="fill_parent"
                     android:text="copy"
+                    android:textColor="@color/colour7"
                     android:autoSizeTextType="uniform"
                     android:background="@drawable/button"
                     android:id="@+id/copy"
@@ -58,6 +60,7 @@
                       android:layout_height="wrap_content">
             <Button android:layout_width="fill_parent"
                     android:text="web search"
+                    android:textColor="@color/colour7"
                     android:autoSizeTextType="uniform"
                     android:background="@drawable/button"
                     android:id="@+id/search"

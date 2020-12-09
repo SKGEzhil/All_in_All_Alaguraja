@@ -3,11 +3,11 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#2F75FF</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="colour1">#E920FF</color>
+    <color name="colour1">#000000</color>
     <color name="colour2">#43A7FF</color>
-    <color name="colour5">#FF8E43</color>
-    <color name="colour6">#2F75FF</color>
-    <color name="colour7">#000000</color>
+    <color name="colour5">#000000</color>
+    <color name="colour6">#000000</color>
+    <color name="colour7">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="black_btn">#353535</color>
     <color name="colour8">#F44336</color>

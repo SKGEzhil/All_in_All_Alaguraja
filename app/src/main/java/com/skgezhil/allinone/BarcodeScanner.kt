@@ -3,6 +3,7 @@ package com.skgezhil.allinone
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.WindowManager
 import android.widget.Button
@@ -34,7 +35,6 @@ class BarcodeScanner : AppCompatActivity() {
 
 
         val actionbar = supportActionBar
-        actionbar?.setBackgroundDrawable(resources.getDrawable(R.drawable.actionbar))
         myClipboard = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager?
         tvresult = findViewById(R.id.tvresult) as TextView
         var search = findViewById(R.id.search) as Button
@@ -46,6 +46,18 @@ class BarcodeScanner : AppCompatActivity() {
         }
         btn = findViewById(R.id.btn) as Button
 
+        val Themesetting : SharedPreferences = getSharedPreferences("Themesetting", 0)
+        val Themeeditor: SharedPreferences.Editor = Themesetting.edit()
+        val isNightModeOn: Boolean = Themesetting?.getBoolean("NightMode", false)
+        if (isNightModeOn){
+            actionbar?.setBackgroundDrawable(resources.getDrawable(com.skgezhil.allinone.R.color.black))
+            btn?.setBackgroundResource(R.drawable.btbg_dark)
+            copytext.setBackgroundResource(R.drawable.btbg_dark)
+            search.setBackgroundResource(R.drawable.btbg_dark)
+        }
+        else {
+            actionbar?.setBackgroundDrawable(resources.getDrawable(com.skgezhil.allinone.R.drawable.actionbar))
+        }
         btn!!.setOnClickListener {
             val intent = Intent(this@BarcodeScanner, ScanActivity::class.java)
             startActivity(intent)
