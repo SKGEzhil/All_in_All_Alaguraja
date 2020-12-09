@@ -74,6 +74,7 @@ class MainActivity : AppCompatActivity() {
             var myIntent = Intent(baseContext, Medical::class.java)
             startActivity(myIntent)
         }
+
     }
 
     override fun onBackPressed() {

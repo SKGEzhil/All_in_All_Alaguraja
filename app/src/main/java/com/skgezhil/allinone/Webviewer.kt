@@ -48,7 +48,7 @@ class Webviewer : AppCompatActivity() {
         MobileAds.initialize(this) {}
 
         //webview settings
-
+        
         webview.webViewClient = mywebviewclient()
         webview.settings.javaScriptEnabled = true
         webview.settings.allowContentAccess = true

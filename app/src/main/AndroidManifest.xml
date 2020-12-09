@@ -18,7 +18,7 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Medical"></activity>
+        <activity android:name=".Medical" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,25 +26,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Info"></activity>
-        <activity android:name=".ScanActivity"></activity>
-        <activity android:name=".BarcodeScanner"></activity>
-        <activity android:name=".Pedometer"></activity>
-        <activity android:name=".Tour"></activity>
-        <activity android:name=".Education"></activity>
-        <activity android:name=".Food"></activity>
-        <activity android:name=".Tickets"></activity>
-        <activity android:name=".Shopping"></activity>
-        <activity android:name=".Webviewer"></activity>
-        <activity android:name=".SocialMedia"></activity>
-        <activity android:name=".Compass"></activity>
-        <activity android:name=".Accelerometer"></activity>
-        <activity android:name=".MagneticSensor"></activity>
-        <activity android:name=".LightSensor"></activity>
-        <activity android:name=".sensorActivity"></activity>
+        <activity android:name=".Info" />
+        <activity android:name=".ScanActivity" />
+        <activity android:name=".BarcodeScanner" />
+        <activity android:name=".Pedometer" />
+        <activity android:name=".Tour" />
+        <activity android:name=".Education" />
+        <activity android:name=".Food" />
+        <activity android:name=".Tickets" />
+        <activity android:name=".Shopping" />
+        <activity android:name=".Webviewer" />
+        <activity android:name=".SocialMedia" />
+        <activity android:name=".Compass" />
+        <activity android:name=".sensorActivity" />
         <activity
                 android:name=".MainActivity"
-                android:noHistory="true"></activity>
+                android:noHistory="true" />
 
         <meta-data
                 android:name="com.google.android.gms.ads.APPLICATION_ID"
