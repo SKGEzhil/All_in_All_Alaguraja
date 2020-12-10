@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 30
     buildToolsVersion "29.0.3"
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -14,9 +14,9 @@ android {
     defaultConfig {
         applicationId "com.skgezhil.allinone"
         minSdkVersion 16
-        targetSdkVersion 28
-        versionCode 8
-        versionName "1.0.2"
+        targetSdkVersion 30
+        versionCode 10
+        versionName "2.0.2(beta)"
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -52,6 +52,7 @@ dependencies {
     implementation 'com.journeyapps:zxing-android-embedded:3.6.0'
     implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4'
     implementation 'com.jakewharton:butterknife:10.0.0'
+    implementation "com.google.android.gms:play-services-instantapps:17.0.0"
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
     implementation 'com.android.volley:volley:1.1.1'
     implementation 'me.dm7.barcodescanner:zxing:1.9'
